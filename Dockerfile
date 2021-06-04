@@ -7,6 +7,9 @@ LABEL version="0.1"
 # Close the interactive
 ENV DEBIAN_FRONTEND noninteractive
 
+# Show container info
+RUN pwd
+
 # Set up enviroment
 RUN apt update -y && \
     apt install -y build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev python-is-python3 \
