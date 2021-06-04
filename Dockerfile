@@ -7,9 +7,6 @@ LABEL version="0.1"
 # Close the interactive
 ENV DEBIAN_FRONTEND noninteractive
 
-# Show container info
-RUN pwd
-
 # Set up enviroment
 RUN apt update -y && \
     apt install -y build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev python-is-python3 \
@@ -20,7 +17,7 @@ RUN apt update -y && \
 RUN git clone https://github.com/microsoft/vscode.git
 
 # Set work dir to where the vscode is
-WORKDIR /root/vscode
+WORKDIR /vscode
 
 # Build vscode
 RUN yarn
