@@ -9,9 +9,9 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Set up enviroment
 RUN apt update -y && \
-    apt-get install -y build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev python-is-python3 \
+    apt install -y build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev python-is-python3 \
     pkg-config git make fakeroot rpm nodejs && \
-    npm install -g yarn
+    rpm install -g yarn
 
 # Checkout vscode
 RUN git clone https://github.com/microsoft/vscode.git
