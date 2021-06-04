@@ -7,9 +7,6 @@ LABEL version="0.1"
 # Close the interactive
 ENV DEBIAN_FRONTEND noninteractive
 
-#Set the user to root
-USER root
-
 # Set up enviroment
 RUN apt update -y && \
     apt install -y build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev python-is-python3 \
@@ -24,4 +21,4 @@ RUN git clone https://github.com/microsoft/vscode.git
 WORKDIR /vscode
 
 # Build vscode
-RUN yarn
+RUN yarn config set unsafe-perm true && yarn
