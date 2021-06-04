@@ -21,4 +21,4 @@ RUN git clone https://github.com/microsoft/vscode.git
 WORKDIR /vscode
 
 # Build vscode
-RUN chmod -R 777 /root/.npm && yarn
+RUN chmod -R 755 /root/.npm && yarn
