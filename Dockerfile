@@ -21,4 +21,4 @@ RUN git clone https://github.com/microsoft/vscode.git
 WORKDIR /vscode
 
 # Build vscode
-RUN npm config set unsafe-perm true && yarn
+RUN chown -R 65534:0 /root/.npm && yarn
