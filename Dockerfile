@@ -27,4 +27,4 @@ RUN git clone https://github.com/microsoft/vscode.git
 WORKDIR /home/code/vscode
 
 # Build vscode
-RUN yarn
+RUN sodo yarn
