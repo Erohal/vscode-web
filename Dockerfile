@@ -20,6 +20,8 @@ RUN useradd --create-home --no-log-init --shell /bin/bash —-disable-password c
     adduser code sudo
 USER code
 WORKDIR /home/code
+# Avoid EACCES
+RUN mkdir ~/.npm-global && npm config set prefix '~/.npm-global' && export PATH=~/.npm-global/bin:$PATH && source ~/.profile
 
 # Checkout vscode
 RUN git clone https://github.com/microsoft/vscode.git
