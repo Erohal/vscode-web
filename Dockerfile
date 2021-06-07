@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Set up enviroment
 RUN apt update -y > /dev/null && \
     apt install -y build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev python-is-python3 \
-    pkg-config git make fakeroot rpm nodejs npm gvfs-bin apt-transport-https compizconfig-settings-manager python3 python3-pip > /dev/null
+    pkg-config git make fakeroot rpm nodejs npm gvfs-bin apt-transport-https compizconfig-settings-manager python3 python3-pip apt-utils > /dev/null
 
 # Create user code and change workdir
 RUN useradd --create-home --no-log-init --shell /bin/bash —-disable-password code && \
