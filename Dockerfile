@@ -24,5 +24,7 @@ RUN git clone https://github.com/microsoft/vscode.git
 # Set work dir to where the vscode is
 WORKDIR /home/code/vscode
 
+RUN who
+RUN pwd
 # Build vscode
 RUN yarn
