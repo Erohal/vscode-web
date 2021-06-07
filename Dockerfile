@@ -19,9 +19,8 @@ RUN useradd --create-home --no-log-init --shell /bin/bash —-disable-password c
     adduser code sudo
 USER code
 WORKDIR /home/code
-
-# Avoid EACCES
-RUN mkdir /home/code/.npm-global && npm config set prefix '/home/code/.npm-global' && export PATH=/home/code/.npm-global/bin:$PATH && source /home/code/.profile
+RUN mkdir ~/.npm-global
+ENV NPM_CONFIG_PREFIX ~/.npm-global
 
 # Checkout vscode
 RUN git clone https://github.com/microsoft/vscode.git
@@ -30,4 +29,4 @@ RUN git clone https://github.com/microsoft/vscode.git
 WORKDIR /home/code/vscode
 
 # Build vscode
-RUN sodo yarn
+RUN yarn
