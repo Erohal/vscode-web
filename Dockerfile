@@ -9,7 +9,7 @@ RUN apt update -y > /dev/null && \
     pkg-config git make fakeroot rpm nodejs npm gvfs-bin apt-transport-https compizconfig-settings-manager python3 python3-pip apt-utils > /dev/null
 
 # Create user code and change workdir
-RUN useradd --create-home --no-log-init --shell /bin/bash —-disable-password code && \
+RUN useradd --create-home --no-log-init --shell /bin/bash code && \
     adduser code sudo
 USER code:code
 WORKDIR /home/code
