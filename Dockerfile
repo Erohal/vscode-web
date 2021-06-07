@@ -10,10 +10,9 @@ ENV DEBIAN_FRONTEND noninteractive
 # Set up enviroment
 RUN apt update -y && \
     apt install -y build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev python-is-python3 \
-    pkg-config git make fakeroot rpm nodejs npm gvfs-bin apt-transport-https compizconfig-settings-manager && \
+    pkg-config git make fakeroot rpm nodejs npm gvfs-bin apt-transport-https compizconfig-settings-manager python3-pip && \
     npm install -g yarn && \
-    npm install -g keytar && \
-    npm install -g npm
+    npm install -g keytar
 
 # Create user code and change workdir
 RUN useradd --create-home --no-log-init --shell /bin/bash —-disable-password code && \
