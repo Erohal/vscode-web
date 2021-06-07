@@ -1,9 +1,5 @@
 FROM ubuntu:latest
 
-LABEL author="Erohal"
-LABEL email="ErohalTheBest@gmail.com"
-LABEL version="0.1"
-
 # Close the interactive
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -17,7 +13,7 @@ RUN apt update -y > /dev/null && \
 # Create user code and change workdir
 RUN useradd --create-home --no-log-init --shell /bin/bash —-disable-password code && \
     adduser code sudo
-USER code
+USER code:code
 WORKDIR /home/code
 RUN mkdir ~/.npm-global
 ENV NPM_CONFIG_PREFIX ~/.npm-global
