@@ -17,7 +17,7 @@ RUN mkdir ~/.npm-global
 ENV NPM_CONFIG_PREFIX ~/.npm-global
 
 # Install dependence of vscode
-npm install -g yarn && \
+RUN npm install -g yarn && \
     npm install -g keytar
 
 
