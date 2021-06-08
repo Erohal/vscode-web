@@ -33,7 +33,7 @@ WORKDIR /root/vscode
 RUN npm install -g npm && \
     npm install -g n && \
     n stable && \
-    PATH="$PATH" && \
+    export PATH="$PATH" && \
     npm install -g yarn
 
 # Build vscode
