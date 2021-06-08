@@ -21,11 +21,13 @@ RUN apt update -y > /dev/null && \
 #ENV NPM_CONFIG_PREFIX ~/.npm-global
 #ENV PATH $PATH:~/.npm-global/bin
 
+WORKDIR /root
+
 # Checkout vscode
 RUN git clone https://github.com/microsoft/vscode.git
 
 # Set work dir to where the vscode is
-WORKDIR /vscode
+WORKDIR /root/vscode
 
 #RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 RUN npm install -g npm && \
