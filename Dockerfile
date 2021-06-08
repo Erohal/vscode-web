@@ -29,14 +29,14 @@ WORKDIR /home/code
 RUN mkdir ~/.npm-global
 ENV NPM_CONFIG_PREFIX ~/.npm-global
 
-RUN npm install -g yarn && \
-    npm install -g keytar
-
 # Checkout vscode
 RUN git clone https://github.com/microsoft/vscode.git
 
 # Set work dir to where the vscode is
 WORKDIR /home/code/vscode
+
+RUN npm install -g yarn && \
+    npm install -g keytar
 
 # Build vscode
 RUN yarn
