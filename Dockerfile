@@ -24,7 +24,8 @@ RUN git clone https://github.com/microsoft/vscode.git
 # Set work dir to where the vscode is
 WORKDIR /home/code/vscode
 
-RUN npm install -g yarn
+RUN npm install -g npm && \
+    npm install -g yarn
 
 # Build vscode
 RUN yarn
