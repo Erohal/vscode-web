@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 # Close the interactive
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt autoremove cmdtest && apt autoremove yarn && \
+RUN apt remove cmdtest && apt remove yarn && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
