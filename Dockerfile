@@ -6,8 +6,8 @@ SHELL ["/bin/bash","-c"]
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set up enviroment
-RUN apt update -y > /dev/null && \
-    apt install -y build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev python-is-python3 \
+RUN apt-get update -y > /dev/null && \
+    apt-get install -y build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev python-is-python3 \
     pkg-config git curl make fakeroot rpm nodejs npm gvfs-bin apt-transport-https compizconfig-settings-manager python3 python3-pip> /dev/null
 
 WORKDIR /root
