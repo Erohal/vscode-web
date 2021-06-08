@@ -27,10 +27,10 @@ RUN npm install -g npm && \
 # Build vscode
 RUN yarn
 
-# Test web version of vscode
-RUN yarn web & yarn watch
+# Make entrypoint script
+RUN touch ENTRYPOINT.sh && echo "yarn web & yarn watch" > ENTRYPOINT.sh
 
-ENTRYPOINT ["yarn web","—-port 8080"]
+ENTRYPOINT ["ENTRYPOINT.sh"]
 
 EXPOSE 8080
 
