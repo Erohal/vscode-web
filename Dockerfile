@@ -31,7 +31,7 @@ RUN git clone https://github.com/microsoft/vscode.git
 RUN npm install -g npm && \
     npm install -g n && \
     n stable && \
-    npm install -g yarnpkg
+    npm install -g yarn
 
 # Build vscode
 RUN yarn
