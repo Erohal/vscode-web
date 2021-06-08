@@ -23,7 +23,8 @@ RUN git clone https://github.com/microsoft/vscode.git
 WORKDIR /home/code/vscode
 
 RUN npm install -g keytar && \
-    npm install -g yarn
+    npm install -g yarn && \
+    export PATH=/home/code/.npm-global/bin:$PATH
 
 # Build vscode
 RUN yarn
