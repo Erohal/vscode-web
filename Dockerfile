@@ -25,7 +25,7 @@ RUN apt update -y > /dev/null && \
 RUN git clone https://github.com/microsoft/vscode.git
 
 # Set work dir to where the vscode is
-#WORKDIR /home/code/vscode
+WORKDIR /vscode
 
 #RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 RUN npm install -g npm && \
