@@ -15,8 +15,10 @@ RUN useradd --create-home --no-log-init --shell /bin/bash code && \
     adduser code sudo
 USER code:code
 WORKDIR /home/code
-#RUN mkdir ~/.npm-global
-#ENV NPM_CONFIG_PREFIX ~/.npm-global
+
+# Avoid EACCES
+RUN mkdir ~/.npm-global
+ENV NPM_CONFIG_PREFIX ~/.npm-global
 
 # Checkout vscode
 RUN git clone https://github.com/microsoft/vscode.git
