@@ -30,8 +30,7 @@ RUN yarn
 # Make entrypoint script
 RUN touch ENTRYPOINT.sh && echo "(yarn web &) && (yarn watch &)" > ENTRYPOINT.sh && chmod +x ENTRYPOINT.sh
 
-RUN ./ENTRYPOINT.sh
 ENTRYPOINT ["ENTRYPOINT.sh"]
 
-EXPOSE 8080
+EXPOSE 8080 8081
 
