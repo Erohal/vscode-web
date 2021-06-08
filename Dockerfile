@@ -29,6 +29,8 @@ RUN git clone https://github.com/microsoft/vscode.git
 
 #RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 RUN npm install -g npm && \
+    npm install -g n && \
+    n stable && \
     npm install -g yarnpkg
 
 # Build vscode
