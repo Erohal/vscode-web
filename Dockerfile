@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-SHELL /bin/bash
+SHELL ["/bin/bash","-c"]
 
 # Close the interactive
 ENV DEBIAN_FRONTEND noninteractive
