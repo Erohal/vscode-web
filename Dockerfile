@@ -25,7 +25,7 @@ RUN npm install -g npm && \
     npm install -g yarn
 
 # Build vscode
-RUN yarn
+RUN yarn && yarn watch-web
 
 # Test web version of vscode
 RUN yarn web
