@@ -28,7 +28,7 @@ RUN npm install -g npm && \
 RUN yarn
 
 # Make entrypoint script
-RUN touch ENTRYPOINT.sh && echo "yarn web && yarn watch" > ENTRYPOINT.sh && chmod +x ENTRYPOINT.sh
+RUN touch ENTRYPOINT.sh && echo "(yarn web &) && (yarn watch &)" > ENTRYPOINT.sh && chmod +x ENTRYPOINT.sh
 
 RUN ./ENTRYPOINT.sh
 ENTRYPOINT ["ENTRYPOINT.sh"]
