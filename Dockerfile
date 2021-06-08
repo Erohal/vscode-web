@@ -16,7 +16,7 @@ WORKDIR /root
 RUN git clone https://github.com/microsoft/vscode.git
 
 # Set work dir to where the vscode is
-WORKDIR /root/.vscode
+WORKDIR /root/vscode
 
 RUN npm install -g npm && \
     npm install -g n && \
