@@ -25,10 +25,10 @@ RUN npm install -g npm && \
     npm install -g yarn
 
 # Build vscode
-RUN yarn && yarn watch
+RUN yarn
 
 # Test web version of vscode
-RUN yarn web
+RUN yarn web & yarn watch
 
 ENTRYPOINT ["yarn web","—-port 8080"]
 
