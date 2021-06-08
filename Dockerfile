@@ -26,3 +26,9 @@ RUN npm install -g npm && \
 
 # Build vscode
 RUN yarn
+
+
+ENTRYPOINT["yarn web","—-port 8080"]
+
+EXPOSE 8080
+
