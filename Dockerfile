@@ -22,7 +22,7 @@ RUN git clone https://github.com/microsoft/vscode.git
 # Set work dir to where the vscode is
 WORKDIR /home/code/vscode
 
-RUN npm install -g keytar &&
+RUN npm install -g keytar && \
     npm install -g yarn
 
 # Build vscode
