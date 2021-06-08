@@ -22,7 +22,8 @@ RUN git clone https://github.com/microsoft/vscode.git
 # Set work dir to where the vscode is
 WORKDIR /home/code/vscode
 
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash && \
+    source /home/code/.bashrc
 
 # Build vscode
 RUN yarn
