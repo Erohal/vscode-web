@@ -19,7 +19,8 @@ WORKDIR /home/code
 # Avoid EACCES
 RUN mkdir ~/.npm-global
 ENV NPM_CONFIG_PREFIX ~/.npm-global
-RUN export PATH=$PATH:~/.npm-global
+RUN export PATH=$PATH:~/.npm-global/bin
+
 # Checkout vscode
 RUN git clone https://github.com/microsoft/vscode.git
 
