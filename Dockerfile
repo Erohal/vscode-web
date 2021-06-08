@@ -28,7 +28,7 @@ RUN npm install -g npm && \
 RUN yarn
 
 
-ENTRYPOINT["yarn web","—-port 8080"]
+ENTRYPOINT ["yarn web","—-port 8080"]
 
 EXPOSE 8080
 
