@@ -17,9 +17,9 @@ RUN apt update -y > /dev/null && \
 #WORKDIR /home/code
 
 # Avoid EACCES
-RUN mkdir ~/.npm-global
-ENV NPM_CONFIG_PREFIX ~/.npm-global
-ENV PATH $PATH:~/.npm-global/bin
+#RUN mkdir ~/.npm-global
+#ENV NPM_CONFIG_PREFIX ~/.npm-global
+#ENV PATH $PATH:~/.npm-global/bin
 
 # Checkout vscode
 RUN git clone https://github.com/microsoft/vscode.git
@@ -27,9 +27,8 @@ RUN git clone https://github.com/microsoft/vscode.git
 # Set work dir to where the vscode is
 #WORKDIR /home/code/vscode
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-RUN nvm install stable && \
-    npm install -g npm && \
+#RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+RUN npm install -g npm && \
     npm install -g yarnpkg
 
 # Build vscode
