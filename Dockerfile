@@ -1,5 +1,7 @@
 FROM ubuntu:20.04
 
+SHELL /bin/bash
+
 # Close the interactive
 ENV DEBIAN_FRONTEND noninteractive
 
