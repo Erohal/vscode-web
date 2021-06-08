@@ -25,7 +25,7 @@ ENV PATH $PATH:~/.npm-global/bin
 RUN git clone https://github.com/microsoft/vscode.git
 
 # Set work dir to where the vscode is
-WORKDIR /home/code/vscode
+#WORKDIR /home/code/vscode
 
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 RUN nvm install stable && \
