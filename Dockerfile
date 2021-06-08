@@ -3,9 +3,6 @@ FROM ubuntu:20.04
 # Close the interactive
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-
 # Set up enviroment
 RUN apt update -y > /dev/null && \
     apt install -y build-essential g++ libx11-dev libxkbfile-dev libsecret-1-dev python-is-python3 \
